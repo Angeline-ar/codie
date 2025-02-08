@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Basics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(to right,hsl(151, 63%, 43%),#203a43, #2b6b87);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .content-container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #f8f9fa;
+            font-size: 2rem;
+        }
+        .video-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            border: 2px solid #ffffff;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .video-card:hover {
+            transform: scale(1.05);
+        }
+        iframe {
+            width: 100%;
+            height: 315px;
+            border-radius: 10px;
+            border: 2px solid #ffffff;
+        }
+        .description {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+        /* New styles for the quiz */
+        .quiz-container {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            margin-top: 20px;
+            text-align: left;
+            max-width: 800px;
+            margin: auto;
+        }
+        .quiz-container h3 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #f8f9fa;
+            margin-bottom: 20px;
+        }
+        .quiz-question {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .quiz-options {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .quiz-options li {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .quiz-options li:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .submit-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            width: 100%;
+            display: block;
+            margin: auto;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <h2>Python Basics</h2>
+        <p class="description">Python Basics introduces fundamental programming concepts essential for writing efficient and structured code. It covers key elements such as variables, data types, operators, and control flow mechanisms.</p>
+        <p class="description">One of the first concepts in Python is variables, which store values that can be manipulated throughout a program. Python supports multiple data types, including integers, floats, strings, lists, tuples, and dictionaries. Understanding these data types is crucial for handling and processing data effectively.</p>
+        <p class="description">Python also provides various operators for performing arithmetic, logical, and comparison operations. These include +, -, *, / for arithmetic operations and ==, !=, <, > for comparisons.</p>
+        <p class="description">Control flow statements like if-else conditions allow programs to make decisions based on specific conditions, while loops (for and while) help automate repetitive tasks. Functions play a vital role in making code reusable and modular by grouping instructions that perform specific tasks.</p>
+        <p class="description">Additionally, Python offers built-in functions like print(), input(), len(), and type() that simplify common programming tasks. By mastering these basics, learners gain a solid foundation to build more complex programs and explore advanced topics such as object-oriented programming and data structures.</p>
+        <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/fWjsdhR3z3c" allowfullscreen></iframe>
+        </div>
+        <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/v5MR5JnKcZI" allowfullscreen></iframe>
+        </div>
+        <div class="quiz-container">
+            <h3>Test Your Knowledge: Python Basics Quiz</h3>
+            <form>
+                <div class="quiz-question">
+                    <p>1. What is the correct syntax to output "Hello, World" in Python?</p>
+                    <ul class="quiz-options">
+                        <li><input type="radio" name="q1"> echo "Hello, World"</li>
+                        <li><input type="radio" name="q1"> printf("Hello, World")</li>
+                        <li><input type="radio" name="q1"> print("Hello, World")</li>
+                        <li><input type="radio" name="q1"> cout << "Hello, World"</li>
+                    </ul>
+                </div>
+                <div class="quiz-question">
+                    <p>2. What is the output of 10 // 3 in Python?</p>
+                    <ul class="quiz-options">
+                        <li><input type="radio" name="q2"> 3.33</li>
+                        <li><input type="radio" name="q2"> 3</li>
+                        <li><input type="radio" name="q2"> 3.0</li>
+                        <li><input type="radio" name="q2"> 4</li>
+                    </ul>
+                </div>
+                <div class="quiz-question">
+                    <p>3. Which operator is used for exponentiation in Python?</p>
+                    <ul class="quiz-options">
+                        <li><input type="radio" name="q3"> ^</li>
+                        <li><input type="radio" name="q3"> **</li>
+                        <li><input type="radio" name="q3"> *</li>
+                        <li><input type="radio" name="q3"> exp()</li>
+                    </ul>
+                </div>
+                <div class="quiz-question">
+                    <p>4. Which of these is a valid way to define a function in Python?</p>
+                    <ul class="quiz-options">
+                        <li><input type="radio" name="q4"> func myFunction()</li>
+                        <li><input type="radio" name="q4"> def myFunction()</li>
+                        <li><input type="radio" name="q4"> function myFunction()</li>
+                        <li><input type="radio" name="q4"> define myFunction()</li>
+                    </ul>
+                </div>
+                <button type="submit" class="submit-btn">Submit Answers</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
