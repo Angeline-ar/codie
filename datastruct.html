@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures in Python</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(to right,hsl(151, 63%, 43%),#203a43, #2b6b87);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .content-container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #f8f9fa;
+            font-size: 2rem;
+        }
+        .video-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            border: 2px solid #ffffff;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .video-card:hover {
+            transform: scale(1.05);
+        }
+        iframe {
+            width: 100%;
+            height: 315px;
+            border-radius: 10px;
+            border: 2px solid #ffffff;
+        }
+        .description {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+        /* New styles for the quiz */
+        .quiz-container {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            margin-top: 20px;
+            text-align: left;
+            max-width: 800px;
+            margin: auto;
+        }
+        .quiz-container h3 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #f8f9fa;
+            margin-bottom: 20px;
+        }
+        .quiz-question {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .quiz-options {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .quiz-options li {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .quiz-options li:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .submit-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            width: 100%;
+            display: block;
+            margin: auto;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <h2>Data Structures in Python</h2>
+        <p class="description">Data structures are essential for organizing and managing data efficiently in Python. Python provides a variety of built-in data structures, each serving different purposes and use cases.</p>
+        <p class="description">Lists are dynamic arrays that allow storage of multiple values in a single variable. They support indexing, slicing, and various built-in methods like append(), remove(), and sort(). Tuples, similar to lists, are immutable, meaning their values cannot be changed after assignment. They are useful for storing related data that should remain constant.</p>
+        <p class="description">Sets store unique, unordered values and are useful for operations like removing duplicates and performing set operations (union, intersection, difference). Dictionaries store key-value pairs, making them perfect for fast lookups and structured data storage. With methods like keys(), values(), and items(), dictionaries are one of the most versatile data structures in Python.</p>
+        <p class="description">Python also supports stacks, queues, and linked lists, which are implemented using lists or external libraries like collections. Understanding data structures is fundamental to writing efficient programs, optimizing memory usage, and improving performance. Mastering them allows developers to handle large datasets, implement algorithms, and solve real-world problems efficiently.</p>
+        <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/R-HLU9Fl5ug" allowfullscreen></iframe>
+        </div>
+        <div class="quiz-container">
+            <h3>Test Your Knowledge: Python Data Structures Quiz</h3>
+            <form>
+                <div class="quiz-question">
+                    <p>1. Which of the following is a mutable data structure in Python?</p>
+                    <ul class="quiz-options">
+                        <li><input type="radio" name="q1"> Tuple</li>
+                        <li><input type="radio" name="q1"> List</li>
+                        <li><input type="radio" name="q1"> String</li>
+                        <li><input type="radio" name="q1"> Frozenset</li>
+                    </ul>
+                </div>
+                <div class="quiz-question">
+                    <p>2. What is the output of the following code?</p>
+                    <pre>
+                        my_dict = {'a': 1, 'b': 2}
+                        print(my_dict.get('c', 3))
+                    </pre>
+                    <ul class="quiz-options">
+                        <li><input type="radio" name="q2"> KeyError</li>
+                        <li><input type="radio" name="q2"> None</li>
+                        <li><input type="radio" name="q2"> 3</li>
+                        <li><input type="radio" name="q2"> 'c'</li>
+                    </ul>
+                </div>
+                <div class="quiz-question">
+                    <p>3. Which data structure does not allow duplicate elements?</p>
+                    <ul class="quiz-options">
+                        <li><input type="radio" name="q3"> List</li>
+                        <li><input type="radio" name="q3"> Tuple</li>
+                        <li><input type="radio" name="q3"> Dictionary</li>
+                        <li><input type="radio" name="q3"> Set</li>
+                    </ul>
+                </div>
+                <div class="quiz-question">
+                    <p>4. How do you create a tuple with a single element?</p>
+                    <ul class="quiz-options">
+                        <li><input type="radio" name="q4"> (1)</li>
+                        <li><input type="radio" name="q4"> (1,)</li>
+                        <li><input type="radio" name="q4"> tuple(1)</li>
+                        <li><input type="radio" name="q4"> [1]</li>
+                    </ul>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit Answers</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
