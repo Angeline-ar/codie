@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Python Features</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(to right,hsl(151, 63%, 43%),#203a43, #2b6b87);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .content-container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #f8f9fa;
+            font-size: 2rem;
+        }
+        .video-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            border: 2px solid #ffffff;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .video-card:hover {
+            transform: scale(1.05);
+        }
+        iframe {
+            width: 100%;
+            height: 315px;
+            border-radius: 10px;
+            border: 2px solid #ffffff;
+        }
+        .description {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+        /* New styles for the quiz */
+        .quiz-container {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            margin-top: 20px;
+            text-align: left;
+            max-width: 800px;
+            margin: auto;
+        }
+        .quiz-container h3 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #f8f9fa;
+            margin-bottom: 20px;
+        }
+        .quiz-question {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .quiz-options {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .quiz-options li {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .quiz-options li:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .submit-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            width: 100%;
+            display: block;
+            margin: auto;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <h2>Advanced Python Features</h2>
+        <p class="description">Mastering advanced Python features enhances code efficiency, readability, and overall programming skills. Some key techniques include list comprehensions, which provide a concise way to create lists by applying an expression to each element in an iterable. Similarly, generator expressions generate items lazily, improving memory efficiency for handling large datasets.</p>
+        <p class="description">Decorators allow modification of function behavior without altering the original code, while context managers (using the with statement) help manage resources like file streams, ensuring proper acquisition and release. The enumerate() function simplifies iteration by providing both index and value, making loops cleaner and more readable.</p>
+        <p class="description">The zip() function efficiently combines multiple iterables into tuples for parallel iteration, while unpacking operators (*, **) simplify function calls and variable assignments. Lambda functions allow the creation of small, inline anonymous functions, reducing code clutter.</p>
+        <p class="description">The any() and all() functions provide quick ways to evaluate conditions across iterables, returning True if any or all conditions are met. Lastly, set comprehensions function similarly to list comprehensions but create sets, automatically eliminating duplicate values.</p>
+        <p class="description">By integrating these advanced features into everyday programming, developers can write more expressive, Pythonic, and optimized code, improving performance and maintainability.</p>
+        <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/6ViGc5NgdSw" allowfullscreen></iframe>
+        </div>
+        <div class="content-container">
+            <h2>Advanced Python Features</h2>
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/6ViGc5NgdSw" allowfullscreen></iframe>
+            </div>
+            <!-- Interactive Quiz Section -->
+            <div class="quiz-container">
+                <h3>Test Your Knowledge: Advanced Python Features Quiz</h3>
+                <form>
+                    <div class="quiz-question">
+                        <p>1. What is the purpose of the 'walrus operator' (:=) introduced in Python 3.8?</p>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q1"> To assign values to variables as part of an expression</li>
+                            <li><input type="radio" name="q1"> To perform integer division</li>
+                            <li><input type="radio" name="q1"> To concatenate strings</li>
+                            <li><input type="radio" name="q1"> To declare anonymous functions</li>
+                        </ul>
+                    </div>
+                    <div class="quiz-question">
+                        <p>2. Which of the following is a correct use of f-strings in Python?</p>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q2"> print(f'Hello, {name}!')</li>
+                            <li><input type="radio" name="q2"> print(f'Hello, name!')</li>
+                            <li><input type="radio" name="q2"> print(f'Hello, {name}')</li>
+                            <li><input type="radio" name="q2"> print(f'Hello, '+name+')</li>
+                        </ul>
+                    </div>
+                    <div class="quiz-question">
+                        <p>3. What is the primary benefit of using generators in Python?</p>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q3"> They allow for lazy evaluation, saving memory</li>
+                            <li><input type="radio" name="q3"> They enable parallel processing</li>
+                            <li><input type="radio" name="q3"> They simplify syntax for list comprehensions</li>
+                            <li><input type="radio" name="q3"> They enhance security of the code</li>
+                        </ul>
+                    </div>
+                    <div class="quiz-question">
+                        <p>4. How can you merge two dictionaries in Python 3.9 and later?</p>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q4"> Using the | operator</li>
+                            <li><input type="radio" name="q4"> Using the + operator</li>
+                            <li><input type="radio" name="q4"> Using the merge() method</li>
+                            <li><input type="radio" name="q4"> Using the update() method</li>
+                        </ul>
+                    </div>
+                    <div class="quiz-question">
+                        <p>5. What does the 'yield' keyword do in a Python function?</p>
+                        <ul class="quiz-options">
+                            <li><input type="radio" name="q5"> It returns a value and terminates the function</li>
+                            <li><input type="radio" name="q5"> It returns a value and pauses the function, allowing it to be resumed later</li>
+                            <li><input type="radio" name="q5"> It raises an exception</li>
+                            <li><input type="radio" name="q5"> It defines a generator function</li>
+                        </ul>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Answers</button>
+                </form>
+            </div>
+    
+    </div>
+</body>
+</html>
