@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-Oriented Programming in Python</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(to right,hsl(151, 63%, 43%),#203a43, #2b6b87);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .content-container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #f8f9fa;
+            font-size: 2rem;
+        }
+        .video-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            border: 2px solid #ffffff;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .video-card:hover {
+            transform: scale(1.05);
+        }
+        iframe {
+            width: 100%;
+            height: 315px;
+            border-radius: 10px;
+            border: 2px solid #ffffff;
+        }
+        .description {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+        /* New styles for the quiz */
+        .quiz-container {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            margin-top: 20px;
+            text-align: left;
+            max-width: 800px;
+            margin: auto;
+        }
+        .quiz-container h3 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #f8f9fa;
+            margin-bottom: 20px;
+        }
+        .quiz-question {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .quiz-options {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .quiz-options li {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .quiz-options li:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .submit-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            width: 100%;
+            display: block;
+            margin: auto;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <h2>Object-Oriented Programming in Python</h2>
+        <p class="description">Object-Oriented Programming (OOP) is a programming paradigm that focuses on organizing code into reusable and structured components called objects. Python is an OOP-friendly language that allows developers to build scalable and maintainable applications efficiently.</p>
+        <p class="description">In OOP, classes serve as blueprints for creating objects. A class defines properties (attributes) and behaviors (methods) that its objects will have. Objects are instances of classes, each having unique data while sharing common functionality.</p>
+        <p class="description">One of the key principles of OOP is encapsulation, which ensures that data and methods are bundled together, preventing unauthorized access. Python enforces this through private and public access modifiers. Another fundamental concept is inheritance, where a child class can inherit attributes and methods from a parent class, promoting code reuse and reducing redundancy.</p>
+        <p class="description">Polymorphism allows different classes to share the same method names while behaving differently, improving flexibility in coding. Additionally, abstraction helps in hiding complex implementation details and exposing only necessary functionalities.</p>
+        <p class="description">OOP is widely used in Python for developing real-world applications, including web development, game design, and data science. Mastering OOP principles in Python enhances problem-solving skills and enables developers to write modular, efficient, and reusable code.</p>
+        <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/JeznW_7DlB0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="quiz-container">
+        <h3>Test Your Knowledge: Python OOP Quiz</h3>
+        <form>
+            <div class="quiz-question">
+                <p>1. What is a class in Python?</p>
+                <ul class="quiz-options">
+                    <li><input type="radio" name="q1"> A blueprint for creating objects</li>
+                    <li><input type="radio" name="q1"> A function that returns a value</li>
+                    <li><input type="radio" name="q1"> A module in Python</li>
+                    <li><input type="radio" name="q1"> A reserved keyword</li>
+                </ul>
+            </div>
+            <div class="quiz-question">
+                <p>2. What is the purpose of the <code>__init__</code> method in a class?</p>
+                <ul class="quiz-options">
+                    <li><input type="radio" name="q2"> To initialize the class itself</li>
+                    <li><input type="radio" name="q2"> To initialize the object's attributes</li>
+                    <li><input type="radio" name="q2"> To delete an object</li>
+                    <li><input type="radio" name="q2"> To define a class method</li>
+                </ul>
+            </div>
+            <div class="quiz-question">
+                <p>3. Which of the following is true about inheritance in Python?</p>
+                <ul class="quiz-options">
+                    <li><input type="radio" name="q3"> A class can inherit from multiple classes</li>
+                    <li><input type="radio" name="q3"> A class can inherit from only one class</li>
+                    <li><input type="radio" name="q3"> Inheritance is not supported in Python</li>
+                    <li><input type="radio" name="q3"> A class cannot inherit from itself</li>
+                </ul>
+            </div>
+            <div class="quiz-question">
+                <p>4. What is encapsulation in OOP?</p>
+                <ul class="quiz-options">
+                    <li><input type="radio" name="q4"> The ability to define multiple methods with the same name</li>
+                    <li><input type="radio" name="q4"> The concept of restricting access to certain components of an object</li>
+                    <li><input type="radio" name="q4"> The process of inheriting attributes from a parent class</li>
+                    <li><input type="radio" name="q4"> The use of functions within a class</li>
+                </ul>
+            </div>
+</body>
+</html>
