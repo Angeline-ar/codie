@@ -1,0 +1,430 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(to right,hsl(151, 63%, 43%),#203a43, #2b6b87);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .content-container {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(20px);
+            animation: fadeIn 1s ease-in-out;
+            transition: transform 0.3s ease-in-out;
+        }
+        .content-container:hover {
+            transform: scale(1.05);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #ffea00;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 15px rgba(255, 215, 0, 0.9);
+        }
+        p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        .progress-container {
+            margin: 20px auto;
+            width: 90%;
+            text-align: left;
+        }
+        h3 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #4cffd7;
+        }
+        .progress-bar {
+            height: 35px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .progress-bar span {
+            display: block;
+            height: 100%;
+            text-align: center;
+            line-height: 35px;
+            color: white;
+            font-weight: bold;
+            transition: width 0.8s ease-in-out;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+            animation: bounceBar 1s infinite alternate ease-in-out;
+        }
+        .correct {
+            background: linear-gradient(to right, #85ffbd, #00ff7f);
+        }
+        .wrong {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+        }
+        @keyframes bounceBar {
+            from { transform: scaleX(1); }
+            to { transform: scaleX(1.02); }
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <h2>🎉 Quiz Assessment 🎉</h2>
+        <p>Check out your progress and see how well you've done! 🚀</p>
+
+        <div class="progress-container">
+            <h3>📌 Introduction to Python</h3>
+            <div class="progress-bar">
+                <span class="correct" style="width: 80%;">4/5 ✅</span>
+            </div>
+        </div>
+
+        <div class="progress-container">
+            <h3>🐍 Python Basics</h3>
+            <div class="progress-bar">
+                <span class="correct" style="width: 60%;">3/4 ✨</span>
+            </div>
+        </div>
+
+        <div class="progress-container">
+            <h3>📂 Data Structures in Python</h3>
+            <div class="progress-bar">
+                <span class="correct" style="width: 100%;">4/4 🌟</span>
+            </div>
+        </div>
+
+        <div class="progress-container">
+            <h3>💡 Object-Oriented Programming</h3>
+            <div class="progress-bar">
+                <span class="correct" style="width: 80%;">3.5/4 🔥</span>
+            </div>
+        </div>
+
+        <div class="progress-container">
+            <h3>🚀 Advanced Python Topics</h3>
+            <div class="progress-bar">
+                <span class="correct" style="width: 50%;">0/5 🤔</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(to right,hsl(151, 63%, 43%),#203a43, #2b6b87);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .content-container {
+            max-width: 900px;
+            margin: 80px auto 20px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(20px);
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #ffea00;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 15px rgba(255, 215, 0, 0.9);
+        }
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4cffd7;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        .progress-container {
+            margin: 20px auto;
+            width: 90%;
+            text-align: left;
+            animation: slideIn 0.5s ease-out;
+            animation-fill-mode: both;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        h3 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #4cffd7;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .progress-bar {
+            height: 35px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .progress-bar span {
+            display: block;
+            height: 100%;
+            text-align: center;
+            line-height: 35px;
+            color: white;
+            font-weight: bold;
+            transition: width 0.8s ease-in-out;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+            background: linear-gradient(45deg, #85ffbd, #00ff7f);
+        }
+        .timestamp {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            backdrop-filter: blur(5px);
+        }
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        .nav-btn.logout {
+            background: rgba(255, 0, 0, 0.2);
+        }
+        .nav-btn.logout:hover {
+            background: rgba(255, 0, 0, 0.3);
+        }
+        .empty-state {
+            padding: 40px;
+            text-align: center;
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="user-info">
+            <div class="user-avatar" id="userAvatar"></div>
+            <span id="userName"></span>
+        </div>
+        <div>
+            <a href="journey.html" class="nav-btn">Courses</a>
+            <button onclick="logout()" class="nav-btn logout">Logout</button>
+        </div>
+    </nav>
+
+    <div class="content-container">
+        <h2>🎯 Learning Progress</h2>
+        
+        <div class="summary-stats" id="summaryStats">
+            <!-- Summary stats will be inserted here -->
+        </div>
+
+        <div id="progressContainer">
+            <!-- Progress bars will be inserted here -->
+        </div>
+    </div>
+
+    <script>
+        // Topic configurations with icons and names
+        const topicConfig = {
+            'python-intro': { icon: '📌', name: 'Introduction to Python' },
+            'python-basics': { icon: '🐍', name: 'Python Basics' },
+            'python-data-structures': { icon: '📂', name: 'Data Structures in Python' },
+            'python-oop': { icon: '🔧', name: 'Object-Oriented Programming' },
+            'python-advanced': { icon: '🚀', name: 'Advanced Python Features' }
+        };
+
+        function formatDate(dateString) {
+            return new Date(dateString).toLocaleString();
+        }
+
+        function getInitials(name) {
+            return name.split(' ').map(word => word[0]).join('').toUpperCase();
+        }
+
+        function calculateOverallProgress(scores) {
+            if (Object.keys(scores).length === 0) return 0;
+            const totalPercentages = Object.values(scores).reduce((sum, score) => sum + score.percentage, 0);
+            return totalPercentages / Object.keys(scores).length;
+        }
+
+        function loadUserProgress() {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            if (!currentUser) {
+                window.location.href = 'signin.html';
+                return;
+            }
+
+            // Set user info in nav bar
+            document.getElementById('userName').textContent = currentUser.name;
+            document.getElementById('userAvatar').textContent = getInitials(currentUser.name);
+
+            const userScores = JSON.parse(localStorage.getItem(`quiz_scores_${currentUser.email}`) || '{}');
+
+            // Calculate summary statistics
+            const totalQuizzes = Object.keys(userScores).length;
+            const overallProgress = calculateOverallProgress(userScores);
+            const bestScore = Object.values(userScores).reduce((max, score) => 
+                Math.max(max, score.percentage), 0);
+
+            // Update summary stats
+            document.getElementById('summaryStats').innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-value">${totalQuizzes}</div>
+                    <div class="stat-label">Quizzes Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${Math.round(overallProgress)}%</div>
+                    <div class="stat-label">Overall Progress</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${Math.round(bestScore)}%</div>
+                    <div class="stat-label">Best Score</div>
+                </div>
+            `;
+
+            const progressContainer = document.getElementById('progressContainer');
+            
+            if (Object.keys(userScores).length === 0) {
+                progressContainer.innerHTML = `
+                    <div class="empty-state">
+                        <p>No quiz scores yet. Start taking quizzes to see your progress! 🎯</p>
+                        <br>
+                        <a href="course-selection.html" class="nav-btn">Go to Courses</a>
+                    </div>
+                `;
+                return;
+            }
+
+            // Generate progress bars
+            progressContainer.innerHTML = Object.entries(userScores)
+                .map(([topicId, data], index) => {
+                    const topic = topicConfig[topicId] || { icon: '📚', name: topicId };
+                    return `
+                        <div class="progress-container" style="animation-delay: ${index * 0.1}s">
+                            <h3>${topic.icon} ${topic.name}</h3>
+                            <div class="progress-bar">
+                                <span style="width: ${data.percentage}%">
+                                    ${data.score}/${data.total} (${Math.round(data.percentage)}%)
+                                </span>
+                            </div>
+                            <div class="timestamp">Completed: ${formatDate(data.timestamp)}</div>
+                        </div>
+                    `;
+                }).join('');
+        }
+
+        function logout() {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'home.html';
+        }
+
+        // Load progress when page loads
+        window.addEventListener('load', loadUserProgress);
+    </script>
+</body>
+</html>
