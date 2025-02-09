@@ -59,12 +59,18 @@
     <div class="journey-container">
         <h2>Your Learning Journey</h2>
         <div class="journey-list">
-            <button class="journey-btn">Introduction to Python</button>
-            <button class="journey-btn">Python Basics</button>
-            <button class="journey-btn">Data Structures in Python</button>
-            <button class="journey-btn">Object-Oriented Programming</button>
-            <button class="journey-btn">Advanced Python Topics</button>
+            <button class="journey-btn" onclick="navigateToTopic('intro')">Introduction to Python</button>
+            <button class="journey-btn" onclick="navigateToTopic('basics')">Python Basics</button>
+            <button class="journey-btn" onclick="navigateToTopic('datastruct')">Data Structures in Python</button>
+            <button class="journey-btn" onclick="navigateToTopic('oop')">Object-Oriented Programming</button>
+            <button class="journey-btn" onclick="navigateToTopic('advanced')">Advanced Python Topics</button>
         </div>
     </div>
+
+    <script>
+        function navigateToTopic(topic){
+            window.location.href = `${topic}.html`
+        }
+    </script>
 </body>
 </html>
