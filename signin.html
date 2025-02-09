@@ -60,20 +60,94 @@
         .btn:hover {
             opacity: 0.8;
         }
+        .signup-link {
+            margin-top: 15px;
+            color: white;
+            text-decoration: none;
+        }
+        .signup-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Sign In</h2>
-        <form>
+        <form id="signinForm">
             <label for="email">E-mail</label>
             <input type="text" id="email" placeholder="Enter your email" required />
-            
+           
             <label for="password">Password</label>
             <input type="password" id="password" placeholder="Enter your password" required />
-            
+           
             <button type="submit" class="btn">Sign In</button>
         </form>
+        <a href="signup.html" class="signup-link">Don't have an account? Sign Up</a>
     </div>
+
+    <script>
+        // Email validation function
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Sign In form submission
+        document.getElementById('signinForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Validate email
+            if (!validateEmail(email)) {
+                alert("Please enter a valid email address");
+                return;
+            }
+            
+            // Get users from localStorage
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            
+            // Find user
+            const user = users.find(user => user.email === email);
+            
+            if (!user) {
+                alert("User not found!");
+                return;
+            }
+            
+            // Check password
+            if (user.password !== password) {
+                alert("Incorrect password!");
+                return;
+            }
+            
+            // Store logged in user info
+            localStorage.setItem('currentUser', JSON.stringify({
+                name: user.name,
+                email: user.email
+            }));
+            
+            alert("Login successful!");
+            window.location.href = 'select.html'
+            // You can redirect to a dashboard or home page here
+            // window.location.href = 'dashboard.html';
+        });
+
+        // Check if user is already logged in
+        window.addEventListener('load', function() {
+            const currentUser = localStorage.getItem('currentUser');
+            if (currentUser) {
+                // Redirect to dashboard if already logged in
+                // window.location.href = 'dashboard.html';
+            }
+        });
+
+        // Logout function (can be used when needed)
+        function logout() {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'signin.html';
+        }
+    </script>
 </body>
 </html>
