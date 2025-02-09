@@ -12,21 +12,22 @@
 [mention your project hosted project link here]
 
 ### Project Description
-This project would help students to learn various programming languages
+This project is designed to provide students with a seamless and structured way to learn various programming languages without the confusion of selecting the right resources. By offering a well-curated learning path, it serves as the perfect kickstart to their coding journey, ensuring they build a strong foundation with clarity and confidence.
 
 ### The Problem statement
-[What ridiculous problem are you solving?]
+Many students struggle to learn programming because they don’t know where to start. With the internet overflowing with countless resources, the sheer volume of information can feel overwhelming, making it difficult for beginners to find a clear and structured learning path. This often leads to confusion, frustration, and a lack of motivation to continue their coding journey.
 
 ### The Solution
 [How are you solving it? Keep it fun!]
+ created an engaging and easy-to-use website where students can dive into programming without the hassle of sifting through endless resources. The platform keeps things simple by displaying only what’s truly needed, making learning smooth and stress-free. The platform also includes quizzes, allowing students to reinforce their knowledge and assess their progress effectively, ensuring a structured and engaging learning experience.
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
+- HTML, CSS
+- [Frameworks used] 
 - [Libraries used]
-- [Tools used]
+- Visual Studio Code
 
 For Hardware:
 - [List main components]
@@ -45,8 +46,9 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![course section](https://github.com/user-attachments/assets/ae69f013-e232-4661-9ef3-12998a77e458)
+
+*This section shows the module contents and quiz section*
 
 ![Screenshot2](Add screenshot 2 here with proper name)
 *Add caption explaining what this shows*
