@@ -176,4 +176,68 @@
         </div>
     </div>
     <script>
+        window.addEventListener('load', function() {
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (!currentUser) {
+            window.location.href = 'signin.html';
+            return;
+        }
+    });
+
+    // Quiz answers for Introduction to Python
+    const answers = {
+        q1: 'B',  // Guido van Rossum
+        q2: 'C',  // .py
+        q3: 'B',  // List
+        q4: 'B',  // def
+        q5: 'B'   // print()
+    };
+
+    function submitQuiz() {
+        // Get current user
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (!currentUser) {
+            alert('Please sign in to submit quiz!');
+            window.location.href = 'signin.html';
+            return;
+        }
+
+        const form = document.getElementById('quiz-form');
+        let score = 0;
+        let totalQuestions = Object.keys(answers).length;
+
+        // Calculate score
+        for (let question in answers) {
+            const selectedOption = form.querySelector(`input[name="${question}"]:checked`);
+            if (selectedOption && selectedOption.value === answers[question]) {
+                score++;
+            }
+        }
+
+        // Calculate percentage
+        const percentage = (score / totalQuestions) * 100;
+
+        // Get existing scores or initialize new array
+        const userScores = JSON.parse(localStorage.getItem(`quiz_scores_${currentUser.email}`) || '{}');
         
+        // Add new score
+        userScores['python-intro'] = {
+            score: score,
+            total: totalQuestions,
+            percentage: percentage,
+            timestamp: new Date().toISOString()
+        };
+
+        // Save updated scores
+        localStorage.setItem(`quiz_scores_${currentUser.email}`, JSON.stringify(userScores));
+
+        // Show result to user
+        alert(`Your score: ${score}/${totalQuestions} (${percentage}%)`);
+
+        // Redirect to scores page
+        window.location.href = 'scores.html';
+    }
+
+    </script>
+    </body>
+    </html>
