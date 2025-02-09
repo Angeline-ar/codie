@@ -60,26 +60,146 @@
         .btn:hover {
             opacity: 0.8;
         }
+        .signin-link {
+            margin-top: 15px;
+            color: white;
+            text-decoration: none;
+        }
+        .signin-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Sign Up</h2>
-        <form>
+        <form id="signupForm">
             <label for="name">Name</label>
             <input type="text" id="name" placeholder="Enter your name" required />
-            
+           
             <label for="email">E-mail</label>
             <input type="text" id="email" placeholder="Enter your email" required />
-            
+           
             <label for="password">Password</label>
             <input type="password" id="password" placeholder="Enter your password" required />
-            
+           
             <label for="cpassword">Confirm Password</label>
             <input type="password" id="cpassword" placeholder="Confirm your password" required />
-            
+           
             <button type="submit" class="btn">Sign Up</button>
         </form>
+        <a href="signin.html" class="signin-link">Already have an account? Sign In</a>
     </div>
+
+    <script>
+        // Password validation function
+        function validatePassword(password) {
+            // Password should be at least 8 characters long
+            if (password.length < 8) {
+                return {
+                    isValid: false,
+                    message: "Password must be at least 8 characters long"
+                };
+            }
+            
+            // Password should contain at least one uppercase letter
+            if (!/[A-Z]/.test(password)) {
+                return {
+                    isValid: false,
+                    message: "Password must contain at least one uppercase letter"
+                };
+            }
+            
+            // Password should contain at least one lowercase letter
+            if (!/[a-z]/.test(password)) {
+                return {
+                    isValid: false,
+                    message: "Password must contain at least one lowercase letter"
+                };
+            }
+            
+            // Password should contain at least one number
+            if (!/\d/.test(password)) {
+                return {
+                    isValid: false,
+                    message: "Password must contain at least one number"
+                };
+            }
+            
+            // Password should contain at least one special character
+            if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+                return {
+                    isValid: false,
+                    message: "Password must contain at least one special character"
+                };
+            }
+            
+            return {
+                isValid: true,
+                message: "Password is valid"
+            };
+        }
+
+        // Email validation function
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Sign Up form submission
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('cpassword').value;
+            
+            // Validate email
+            if (!validateEmail(email)) {
+                alert("Please enter a valid email address");
+                return;
+            }
+            
+            // Validate password
+            const passwordValidation = validatePassword(password);
+            if (!passwordValidation.isValid) {
+                alert(passwordValidation.message);
+                return;
+            }
+            
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+            
+            // Check if user already exists
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            if (users.some(user => user.email === email)) {
+                alert("User with this email already exists!");
+                return;
+            }
+            
+            // Add new user
+            users.push({
+                name,
+                email,
+                password
+            });
+            
+            localStorage.setItem('users', JSON.stringify(users));
+            alert("Registration successful! Please sign in.");
+            window.location.href = 'signin.html';
+        });
+
+        // Check if user is already logged in
+        window.addEventListener('load', function() {
+            const currentUser = localStorage.getItem('currentUser');
+            if (currentUser) {
+                // Redirect to dashboard if already logged in
+            }
+        });
+    </script>
 </body>
 </html>
