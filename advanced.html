@@ -130,7 +130,7 @@
             <!-- Interactive Quiz Section -->
             <div class="quiz-container">
                 <h3>Test Your Knowledge: Advanced Python Features Quiz</h3>
-                <form>
+                <form id="quiz-form">
                     <div class="quiz-question">
                         <p>1. What is the purpose of the 'walrus operator' (:=) introduced in Python 3.8?</p>
                         <ul class="quiz-options">
@@ -181,5 +181,70 @@
             </div>
     
     </div>
+
+    <script>
+        // Check if user is logged in
+        window.addEventListener('load', function() {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            if (!currentUser) {
+                window.location.href = 'signin.html';
+                return;
+            }
+        });
+    
+        // Quiz answers for Advanced Python
+        const answers = {
+            q1: 'A',  // Walrus operator
+            q2: 'A',  // f-strings
+            q3: 'A',  // lazy evaluation
+            q4: 'A',  // | operator
+            q5: 'B'   // yield
+        };
+    
+        function submitQuiz() {
+            // Get current user
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            if (!currentUser) {
+                alert('Please sign in to submit quiz!');
+                window.location.href = 'signin.html';
+                return;
+            }
+    
+            const form = document.querySelector('form');
+            let score = 0;
+            let totalQuestions = Object.keys(answers).length;
+    
+            // Calculate score
+            for (let question in answers) {
+                const selectedOption = form.querySelector(`input[name="${question}"]:checked`);
+                if (selectedOption && selectedOption.value === answers[question]) {
+                    score++;
+                }
+            }
+    
+            // Calculate percentage
+            const percentage = (score / totalQuestions) * 100;
+    
+            // Get existing scores or initialize new array
+            const userScores = JSON.parse(localStorage.getItem(`quiz_scores_${currentUser.email}`) || '{}');
+            
+            // Add new score
+            userScores['python-advanced'] = {
+                score: score,
+                total: totalQuestions,
+                percentage: percentage,
+                timestamp: new Date().toISOString()
+            };
+    
+            // Save updated scores
+            localStorage.setItem(`quiz_scores_${currentUser.email}`, JSON.stringify(userScores));
+    
+            // Show result to user
+            alert(`Your score: ${score}/${totalQuestions} (${percentage}%)`);
+    
+            // Redirect to scores page
+            window.location.href = 'scores.html';
+        }
+    </script>
 </body>
 </html>
