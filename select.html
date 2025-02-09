@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -100,5 +100,199 @@
             <button type="submit" class="btn">Proceed</button>
         </form>
     </div>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Selection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, hsl(151, 79%, 55%), #203a43, #2b6b87);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+        .checkbox-container input {
+            width: auto;
+            margin-right: 10px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #022d00;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Course Selection</h2>
+        <form id="courseForm">
+            <label for="language">Choose a Language</label>
+            <select id="language" required>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+            </select>
+           
+            <label for="level">Select Level</label>
+            <select id="level" required>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+           
+            <div class="checkbox-container">
+                <input type="checkbox" id="skip-basics">
+                <label for="skip-basics">Skip the Basics</label>
+            </div>
+           
+            <button type="submit" class="btn">Proceed</button>
+        </form>
+    </div>
+
+    <script>
+        // Check if user is logged in
+        window.addEventListener('load', function() {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            if (!currentUser) {
+                window.location.href = 'signin.html';
+                return;
+            }
+
+            // Check if user already has courses
+            const userCourses = JSON.parse(localStorage.getItem(`courses_${currentUser.email}`));
+            if (userCourses && userCourses.length > 0) {
+                window.location.href = 'assess.html';
+            }
+        });
+
+        // Handle level selection change
+        document.getElementById('level').addEventListener('change', function(e) {
+            const skipBasicsCheckbox = document.getElementById('skip-basics');
+            const selectedLevel = e.target.value;
+            
+            if (selectedLevel === 'beginner') {
+                skipBasicsCheckbox.checked = false;
+                skipBasicsCheckbox.disabled = true;
+            } else {
+                skipBasicsCheckbox.disabled = false;
+            }
+        });
+
+        // Handle form submission
+        document.getElementById('courseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            if (!currentUser) {
+                alert('Please sign in first!');
+                window.location.href = 'signin.html';
+                return;
+            }
+
+            const language = document.getElementById('language').value;
+            const level = document.getElementById('level').value;
+            const skipBasics = document.getElementById('skip-basics').checked;
+
+            // Validate skip basics for beginner level
+            if (level === 'beginner' && skipBasics) {
+                alert('Beginners cannot skip basics!');
+                return;
+            }
+
+            // Create course object
+            const courseData = {
+                language,
+                level,
+                skipBasics,
+                startDate: new Date().toISOString(),
+                status: 'in_progress'
+            };
+
+            // Store course data for the user
+            const userEmail = currentUser.email;
+            const userCourses = JSON.parse(localStorage.getItem(`courses_${userEmail}`)) || [];
+            
+            // Check if course already exists
+            const existingCourse = userCourses.find(course => 
+                course.language === language && course.level === level
+            );
+
+            if (existingCourse) {
+                alert('You are already enrolled in this course!');
+                return;
+            }
+
+            userCourses.push(courseData);
+            localStorage.setItem(`courses_${userEmail}`, JSON.stringify(userCourses));
+
+            // Redirect to learning time selection
+            window.location.href = 'time.html';
+        });
+
+        // Initialize level selection state
+        window.addEventListener('load', function() {
+            const skipBasicsCheckbox = document.getElementById('skip-basics');
+            skipBasicsCheckbox.disabled = true; // Initially disabled for beginner level
+        });
+    </script>
 </body>
 </html>
