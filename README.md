@@ -26,7 +26,7 @@ For Software:
 - HTML, CSS
 - Visual Studio Code
 
-# Screenshots (Add at least 3)
+# Screenshots
 ![course section](https://github.com/user-attachments/assets/75c2445d-388f-4d53-aa0f-d206973a54f6)
 
 *This section shows the module contents*
