@@ -125,7 +125,7 @@
     </div>
     <div class="quiz-container">
         <h3>Test Your Knowledge: Python OOP Quiz</h3>
-        <form>
+        <form id="quiz-form">
             <div class="quiz-question">
                 <p>1. What is a class in Python?</p>
                 <ul class="quiz-options">
@@ -162,5 +162,72 @@
                     <li><input type="radio" name="q4"> The use of functions within a class</li>
                 </ul>
             </div>
+            <button type="button" class="submit-btn" onclick="submitQuiz()">Submit Answers</button>
+            </form>
+            </div>
+
+            <script>
+                // Check if user is logged in
+                window.addEventListener('load', function() {
+                    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+                    if (!currentUser) {
+                        window.location.href = 'signin.html';
+                        return;
+                    }
+                });
+            
+                // Quiz answers for Python OOP
+                const answers = {
+                    q1: 'A',  // A blueprint for creating objects
+                    q2: 'B',  // To initialize the object's attributes
+                    q3: 'A',  // A class can inherit from multiple classes
+                    q4: 'B'   // The concept of restricting access to certain components
+                };
+            
+                function submitQuiz() {
+                    // Get current user
+                    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+                    if (!currentUser) {
+                        alert('Please sign in to submit quiz!');
+                        window.location.href = 'signin.html';
+                        return;
+                    }
+            
+                    const form = document.getElementById('quiz-form');
+                    let score = 0;
+                    let totalQuestions = Object.keys(answers).length;
+            
+                    // Calculate score
+                    for (let question in answers) {
+                        const selectedOption = form.querySelector(`input[name="${question}"]:checked`);
+                        if (selectedOption && selectedOption.value === answers[question]) {
+                            score++;
+                        }
+                    }
+            
+                    // Calculate percentage
+                    const percentage = (score / totalQuestions) * 100;
+            
+                    // Get existing scores or initialize new array
+                    const userScores = JSON.parse(localStorage.getItem(`quiz_scores_${currentUser.email}`) || '{}');
+                    
+                    // Add new score
+                    userScores['python-oop'] = {
+                        score: score,
+                        total: totalQuestions,
+                        percentage: percentage,
+                        timestamp: new Date().toISOString()
+                    };
+            
+                    // Save updated scores
+                    localStorage.setItem(`quiz_scores_${currentUser.email}`, JSON.stringify(userScores));
+            
+                    // Show result to user
+                    alert(`Your score: ${score}/${totalQuestions} (${percentage}%)`);
+            
+                    // Redirect to scores page
+                    window.location.href = 'scores.html';
+                }
+            </script>
 </body>
 </html>
