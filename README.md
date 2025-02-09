@@ -2,14 +2,14 @@
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: Angeline
 
 
 ### Team Members
 - Member 1: Angeline Ann Renji - Mar Baselios College of Engineering and Technology
 
 ### Hosted Project Link
-[mention your project hosted project link here]
+[hosted project](https://cute-kulfi-9c3e5e.netlify.app/)
 
 ### Project Description
 This project is designed to provide students with a seamless and structured way to learn various programming languages without the confusion of selecting the right resources. By offering a well-curated learning path, it serves as the perfect kickstart to their coding journey, ensuring they build a strong foundation with clarity and confidence.
@@ -25,6 +25,10 @@ Created an engaging and easy-to-use website where students can dive into program
 For Software:
 - HTML, CSS
 - Visual Studio Code
+
+### Project Demo
+# Video https://drive.google.com/file/d/1_a0NSMuAtF4ErRRIeK3SkmQhO3Lihu4V/view?usp=sharing
+*Explaining the flow*
 
 # Screenshots
 ![course section](https://github.com/user-attachments/assets/75c2445d-388f-4d53-aa0f-d206973a54f6)
